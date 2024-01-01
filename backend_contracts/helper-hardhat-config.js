@@ -2,8 +2,8 @@ const networkConfig = {
 	default: {
 		name: "hardhat",
 	},
-	31337: {
-		name: "localhost",
+	11155111: {
+		name: "sepolia",
 	},
 	4: {
 		name: "rinkeby",
@@ -14,7 +14,7 @@ const networkConfig = {
 };
 
 const developmentChains = ["hardhat", "localhost"];
-const VERIFICATION_BLOCK_CONFIRMATIONS = 4;
+const VERIFICATION_BLOCK_CONFIRMATIONS = 6;
 // const frontEndContractsFile = "../nextjs-smartcontract-lottery-fcc/constants/contractAddresses.json"
 // const frontEndAbiFile = "../nextjs-smartcontract-lottery-fcc/constants/abi.json"
 

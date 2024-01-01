@@ -9,7 +9,7 @@ import { CustomButton, ProductCard, LandingHero } from "../UI";
 
 import classes from "./Home.module.css";
 import {
-  demo
+  demo  
 } from "../../Assets/Home";
 import wave from "../../Assets/Home/waves.svg";
 
