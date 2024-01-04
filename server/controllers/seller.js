@@ -278,18 +278,12 @@ const confirmPurchaseOfProduct = asyncHandler(async (req, res) => {
 
 	const buyer = await User.findById(product.orderedBy);
 
-	// await sendEmail({
-	// 	sellerEmail: "nishantbhosale244@gmail.com",
-	// 	userEmail: buyer.email,
-	// 	subject: `Issued Warranty Card For ${product.title}!`,
-	// 	text: `Your purchased product ${product.title} has been issued a digital warranty card, with unique number of ${tId}! And it has been dispatched successfully. Thanks for shopping with us!`,
-	// });
 
 	sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 	console.log(buyer.email);
 	const msg = {
 		to: buyer.email, // Change to your recipient
-		from: "omgawandeofficial9834899149@gmail.com", // Change to your verified sender
+		from: "ozajatin9309@gmail.com", // Change to your verified sender
 		subject: `Issued Warranty Card For ${product.title}!`,
 		text: `Your purchased product ${product.title} has been issued a digital warranty card, with unique number of ${tId}! And it has been dispatched successfully. Thanks for shopping with us!`,
 	};
