@@ -22,6 +22,8 @@ import {
 	UPDATE_PROFILE,
 } from "../types";
 
+axios.defaults.baseURL = 'http://localhost:8000';
+
 const SellerAuthState = (props) => {
 	const initialState = {
 		token: localStorage.getItem("sellerToken"),
@@ -136,12 +138,12 @@ const SellerAuthState = (props) => {
 		};
 
 		try {
-			// const res = await axios.post("/api/product", formData, config);
-			const res = await axios.put(
-			  `http://localhost:8000/api/product/${sellerId}`,
-			  image,
-			  config
-			);
+			const res = await axios.post("http://localhost:8000/api/product", formData, config);
+			// const res = await axios.put(
+			//   `http://localhost:8000/api/product/${sellerId}`,
+			//   image,
+			//   config
+			// );
 			// const res = { res1, res2 };
 			console.log(res);
 			dispatch({ type: ADD_PRODUCT, payload: res.data });

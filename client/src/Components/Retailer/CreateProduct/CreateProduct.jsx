@@ -67,7 +67,7 @@ const CreateProduct = () => {
       dataArray.append("hasWarranty", hasWarranty);
       dataArray.append("warrantyDuration", warrantyDuration);
       dataArray.append("image", img["0"], img["0"].name);
-      console.log(dataArray);
+      console.log(dataArray); // form data
       try {
         await addProduct(dataArray);
       } catch (error) {

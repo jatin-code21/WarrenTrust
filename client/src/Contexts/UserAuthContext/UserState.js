@@ -21,6 +21,8 @@ import {
   UPDATE_PROFILE,
 } from "../types";
 
+axios.defaults.baseURL = 'http://localhost:8000';
+
 const UserAuthState = (props) => {
   const initialState = {
     token: localStorage.getItem("userToken"),

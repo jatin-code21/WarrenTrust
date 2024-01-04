@@ -195,10 +195,15 @@ const Product = () => {
 			});
 
 			res.wait(1).then((transactionReceipt) => {
-				const tokenIdNum = parseInt(transactionReceipt.logs[0].topics[3]);
-				setTokenId(tokenIdNum);
-				updateProductToken(productId, tokenIdNum, orderedBy._id);
-			});
+				if (transactionReceipt && transactionReceipt.logs && transactionReceipt.logs.length > 0) {
+				  const tokenIdNum = parseInt(transactionReceipt.logs[0].topics[3]);
+				  setTokenId(tokenIdNum);
+				  updateProductToken(productId, tokenIdNum, orderedBy._id);
+				} else {
+				  console.error("Transaction receipt is missing or invalid logs.");
+				  // Handle the error appropriately, e.g., retry, log, or notify the user.
+				}
+			  });
 		} catch (error) {
 			console.log(error);
 		}
